@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الدعوة السينمائية</title>
+<style>
+body{margin:0;font-family:Arial;background:#f7efe6;overflow-x:hidden;text-align:center}
+.flowers{position:fixed;top:0;width:100%;font-size:28px;animation:fall 8s linear infinite}
+@keyframes fall{from{transform:translateY(-50px)}to{transform:translateY(100vh)}}
+.envelope{margin:80px auto;width:260px;height:160px;background:linear-gradient(45deg,#d4af37,#b8860b);border-radius:12px;color:#fff;display:flex;align-items:center;justify-content:center;font-size:30px;cursor:pointer;transition:1s}
+.envelope:hover{transform:scale(1.05)}
+.card{display:none;background:#fff;max-width:650px;margin:20px auto;padding:25px;border-radius:20px;box-shadow:0 0 20px rgba(0,0,0,.2)}
+img{max-width:100%;border-radius:20px}
+.btn{display:inline-block;padding:12px 20px;background:#d4af37;color:white;text-decoration:none;border-radius:10px;margin:8px}
+#countdown{font-size:24px;margin:15px;color:#8b4513}
+</style>
+</head>
+<body>
+<div class='flowers'>🌹 ✨ 🌹 ✨ 🌹</div>
+<div class='envelope' onclick='openInvite()'>💌 افتح الدعوة</div>
+<div class='card' id='card'>
+<h1>محمود ❤️ إسراء</h1>
+<h3>يتشرفان بدعوتكم لمشاركتهما أجمل لحظات العمر</h3>
+<img src='photo.png'>
+<h2>📅 1 / 10 / 2026</h2>
+<h2>🕗 8:00 مساءً</h2>
+<h2>🏛️ قاعة كيان – نادي المعلمين</h2>
+<div id='countdown'></div>
+<a class='btn' href='https://maps.app.goo.gl/QVR1AnLRPYcEcaHQ6?g_st=ac' target='_blank'>📍 موقع القاعة</a>
+<p>وجودكم يسعدنا ويزيد فرحتنا 🌹</p>
+</div>
+<script>
+function openInvite(){document.querySelector('.envelope').style.display='none';document.getElementById('card').style.display='block';}
+let target=new Date('2026-10-01T20:00:00');
+setInterval(()=>{let d=target-new Date();if(d>0){let days=Math.floor(d/86400000);let hrs=Math.floor((d%86400000)/3600000);document.getElementById('countdown').innerHTML='⏳ متبقي '+days+' يوم و '+hrs+' ساعة';}},1000);
+</script>
+</body></html>
